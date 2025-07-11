@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: justify;
+            background: linear-gradient(135deg, #121212, #1c1c1c);
+            color: #f5f5f5;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        .image {
+            font-style: italic;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+            align-items: center;
+        }
+        .hero {
+            background: url('cw.jpg') no-repeat center center/cover;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.6rem;
+            font-weight: bold;
+            text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.8);
+            animation: fadeInSlide 2s ease-in-out;
+        }
+        @keyframes fadeInSlide {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .nav {
+            background: linear-gradient(90deg, #333, #555);
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            border-bottom: 4px solid #222;
+        }
+        .nav:hover {
+            background: linear-gradient(90deg, #444, #666);
+        }
+        .nav a:hover {
+            background-color: #444;
+            transform: scale(1.1);
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.3rem;
+            padding: 12px 18px;
+            border-radius: 8px;
+            transition: background 0.3s, transform 0.3s ease-in-out;
+        }
+        .content {
+            padding: 60px;
+            font-size: 1.4rem;
+            line-height: 1.8;
+            max-width: 1100px;
+            margin: auto;
+            background: #2a2a2a;
+            border-radius: 12px;
+        }
+        h2, h3 {
+            color: #ffcc5c;
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #444;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #333;
+        }
+        .footer {
+            margin-top: 50px;
+            background: linear-gradient(90deg, #222, #333);
+            color: white;
+            padding: 25px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        .db-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 30px 0;
+      font-family: Arial, sans-serif;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .db-table th {
+      background-color: #ffcc5c;
+      color: #000;
+      padding: 16px;
+      text-align: left;
+      font-size: 18px;
+    }
+
+    .db-table td {
+      padding: 16px;
+      font-size: 16px;
+      color: #fff;
+      vertical-align: top;
+    }
+
+    .row-dark {
+      background-color: #2a2a2a;
+    }
+    code, pre {
+  display: inline-block;      
+  text-align: left !important;  
+  vertical-align: middle;
+  white-space: nowrap;      
+  background-color: #222;
+  color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 6px;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+    .row-darker {
+      background-color: #1f1f1f;
+    }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Chapter 2 - C Programming</h1>
+    </div>
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="Ch-1.html">Chapter 1</a>
+        <a href="Ch-2.html">Chapter 2</a>
+        <a href="Ch-3.html">Chapter 3</a>
+        <a href="Ch-4.html">Chapter 4</a>
+        <a href="Ch-5.html">Chapter 5</a>
+        <a href="Ch-6.html">Chapter 6</a>
+        <a href="Ch-7.html">Chapter 7</a>
+    </div>
+
+    <div class="content">
+      <h2>1. Working with a Function</h2>
+
+  <h3>a. Define Function</h3>
+  <p>A function is a self-contained block of code designed to perform a specific task. Functions help improve modularity and code reusability. Once a function is defined, it can be called multiple times from different parts of a program.</p>
+
+  <h3>b. Syntax of Functions</h3>
+  <p>The basic syntax of a function includes its return type, name, optional parameters, and body. </p>
+  <strong>Example:</strong><br>
+
+  <pre><code>int add(int a, int b) {<br>
+    return a + b;<br>
+}</code></pre>
+
+<h3>c. Types of Functions</h3>
+<ul style="list-style-type: disc; color: white;">
+  <li><strong>Library Functions:</strong> These are built-in functions provided by programming languages. They perform standard operations like input/output, math computations, string operations, and more. Examples include <code>printf()</code>, <code>scanf()</code>, <code>sqrt()</code>, and <code>strlen()</code>.</li>
+  <br>
+  <li><strong>User-Defined Functions:</strong> These are custom functions created by the programmer to perform specific tasks. They help make the code modular, reusable, and easier to maintain. For example, a user-defined function <code>int add(int a, int b)</code> can be written to return the sum of two numbers.</li>
+</ul>
+
+<h3>d. Components of a Function</h3>
+<ul style="list-style-type: disc; color: white;">
+  <li><strong>Function Prototype:</strong> A declaration that informs the compiler about the function’s name, return type, and parameters before it is defined. It appears at the beginning of the program.</li>
+  
+  <p><strong>Example:</strong></p>
+   <code>int add(int, int);</code>
+<br>
+<br>
+  <li><strong>Function Call:</strong> The point where the function is actually invoked or executed in the program. It sends control to the function definition and may return a result.</li> 
+  <p><strong>Example:</strong></p>
+  <code>sum = add(4, 5);</code>
+<br>
+<br>
+  <li><strong>Function Definition:</strong> This is the actual body of the function where the logic is written. It contains a header and a block of code that performs the operation. </li>
+  <p><strong>Example:</strong></p>
+  <code>
+  int add(int a, int b) {<br>
+  &nbsp;&nbsp;return a + b;<br>
+  }
+  </code>
+<br>
+<br>
+  <li><strong>Return Type:</strong> It specifies the type of data the function returns to the caller, such as <code>int</code>, <code>float</code>, <code>char</code>, or <code>void</code> (if nothing is returned).</li>
+</ul>
+<br>
+<h2>2. Categories of Functions with Example</h2>
+
+<h3>a. Function with Return Type but No Arguments:</h3></p>
+<p>This type of function is designed to perform a specific task and return a result, but it does not require any input from the user or program when called. It is useful when all the necessary data for computation is already available within the function itself. Such functions are often used for returning fixed values or reading internal states. For example, a function that returns a constant or the result of a calculation that doesn't depend on external input.</p>
+
+<strong>Example:</strong><br>
+<pre>
+    int getNumber() {<br>
+    return 10;<br>
+}
+</pre>
+
+<h3>b. Function with Return Type with Arguments:</h3>
+<p>This function accepts one or more input parameters and returns a value based on those inputs. It allows passing external data into the function, processing it internally, and then sending the result back to the calling environment. These types of functions are useful for tasks such as performing mathematical calculations or evaluating conditions. Since they use arguments, the result can vary depending on the inputs provided.</p>
+<strong>Example:</strong><br>
+<pre>
+int add(int a, int b) {<br>
+    return a + b;<br>
+}
+</pre>
+
+
+    </div>
+    <div class="footer">&copy; All rights reserved. Grade XI Computer Science, 2025.</div>
+</body>
+</html>
