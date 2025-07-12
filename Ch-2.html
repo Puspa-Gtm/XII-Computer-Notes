@@ -223,6 +223,100 @@ int add(int a, int b) {<br>
 </pre>
 
 
+
+ <h3>c. Function with No Return Type and No Arguments</h3>
+  <p>This type of function neither takes arguments nor returns any value. It is typically used when the function performs an action like displaying a message or modifying a global variable. These functions rely solely on internal logic and are suitable for simple tasks that don't require input or produce output to the calling program.</p>
+  <strong>Example:</strong><br>
+  <pre>
+#include &lt;stdio.h&gt;<br>
+void greet() {<br>
+    printf("Hello! Welcome to C Programming.\n");<br>
+}<br>
+int main() {<br>
+    greet();<br>
+    return 0;<br>
+}
+
+  </pre>
+
+  <h3>d. Function with No Return Type but With Arguments</h3>
+  <p>This function accepts arguments but does not return any value. It is useful when you need to pass data into the function for processing or display, but the function does not need to send any result back. These are often used for displaying data, updating global variables, or logging events.</p>
+  <strong>Example:</strong><br>
+  <pre>
+#include &lt;stdio.h&gt;<br>
+void displaySum(int a, int b) {<br>
+    int sum = a + b;<br>
+    printf("Sum = %d\n", sum);<br>
+}<br>
+
+int main() {<br>
+    displaySum(5, 7);<br>
+    return 0;<br>
+}
+
+  </pre>
+
+  <h2>3. Storage Classes</h2>
+  <p>Storage classes in C define the scope, lifetime, visibility, and default initial value of variables. They determine how memory is allocated, where the variable is stored, and how long it persists in memory during the program's execution. A storage class also specifies whether the variable is accessible within a specific block or throughout the program. Each variable in C is associated with one of the storage classes, which helps the compiler manage memory and performance optimally. Understanding storage classes is essential for writing efficient and maintainable C programs. In C, storage classes are categorized into four types:</p>
+
+<ul>
+  <li>
+    <strong>Automatic Storage Class:</strong> This is the default storage class for local variables in C. Variables declared inside functions without a storage class keyword are considered `auto`. They are created when the function or block is entered and destroyed when it exits. These variables are not initialized automatically and may contain garbage values if not explicitly initialized. They are stored in the stack memory. <br>
+   <br>
+  </li>
+
+  <li>
+    <strong>External Storage Class:</strong> This is used to declare a global variable that is defined in another file or later in the same file. It allows different source files to share the same global variable. `extern` variables are stored in memory throughout the program execution and are initialized to zero by default. <br>
+<br>
+  </li>
+
+  <li>
+    <strong>Register Storage Class:</strong> The register storage class is used to suggest that the compiler store the variable in a processor register instead of RAM to make access faster. This is especially useful for frequently accessed variables like loop counters. Register variables have automatic storage duration, meaning they are created when the function or block is entered and destroyed upon exit. However, they do not have a default value and hold garbage data if not explicitly initialized. One important limitation is that you cannot access the memory address of a register variable using the address-of (&) operator. <br>
+   <br>
+  </li>
+
+  <li>
+    <strong>Static Storage Class:</strong> The static storage class is used to retain the value of a variable between function calls. Unlike automatic variables which are re-initialized each time a function is called, static variables are initialized only once and maintain their value even after the function ends. This makes them ideal for counting or preserving state across multiple function calls. A static variable also has internal linkage, meaning it is not visible outside the file if declared globally. By default, static variables are initialized to zero if no value is assigned explicitly.<br>
+  </li>
+</ul>
+
+
+  <h2>4. Recursive Function</h2>
+ <p>A recursive function is a function that calls itself to solve a problem by breaking it down into smaller sub-problems of the same type. Recursion is particularly useful for tasks that can be divided into similar subtasks, such as calculating factorial, Fibonacci numbers, or traversing data structures like trees. Every recursive function must have at least one <em>base case</em> to stop the recursion and avoid infinite loops. The function repeatedly calls itself with a modified input that gets closer to the base case. Once the base case is reached, the function begins to return values, unwinding the recursive calls one by one. Recursive solutions are elegant but can be memory-intensive due to the use of call stacks.</p>
+
+ <strong>Example:</strong><br>
+  <pre>
+int factorial(int n) {<br>
+    if (n <= 1)<br>
+        return 1;<br>
+    else<br>
+        return n * factorial(n - 1);<br>
+}
+  </pre>
+
+  <h2>5. Passing Array to a Function</h2>
+ <p>
+  In C, when you pass an array to a function, only the address of its first element is sent. This means the function can directly access and modify the original array without making a copy. By default, arrays are passed this way, which is efficient for memory and speed. Sometimes, the size of the array is also passed as a separate argument so the function knows how many elements to process. Although you can specify the size in the function parameter, it doesn’t change how the array is passed internally. This allows flexible and efficient manipulation of arrays inside functions.
+</p>
+<strong>Example:</strong><br>
+ <pre>
+
+void incrementArray(int arr[], int size) {<br>
+    for (int i = 0; i < size; i++) {<br>
+        arr[i] = arr[i] + 1; <br>
+
+    }<br>
+}<br>
+
+int main() {<br>
+      int numbers[] = {1, 2, 3};<br>
+    incrementArray(numbers, 3);<br>
+    return 0;<br>
+}
+
+</pre>
+
+
     </div>
     <div class="footer">&copy; All rights reserved. Grade XI Computer Science, 2025.</div>
 </body>
