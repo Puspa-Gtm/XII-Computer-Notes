@@ -138,6 +138,16 @@
     .row-darker {
       background-color: #1f1f1f;
     }
+
+    img {
+  display: inline-block;
+  text-align: left !important;
+  margin: 10px 0 30px 0;
+  height: auto;
+  max-width: none;     
+  border-radius: 8px;
+  vertical-align: middle;
+}
     </style>
 </head>
 <body>
@@ -208,20 +218,41 @@
 
 <strong>Example:</strong><br>
 <pre>
-    int getNumber() {<br>
-    return 10;<br>
-}
-</pre>
+   #include &lt;stdio.h&gt;<br>
 
+int getNumber() {<br>
+    return 10;<br>
+}<br><br>
+int main() {<br>
+    int num = getNumber();<br>
+    printf("%d", num);<br>
+    printf("\nExecuted by Puspa");<br>
+    return 0;<br>
+}
+
+ 
+
+</pre><br>
+<img src="c1.jpg" >
 <h3>b. Function with Return Type with Arguments:</h3>
 <p>This function accepts one or more input parameters and returns a value based on those inputs. It allows passing external data into the function, processing it internally, and then sending the result back to the calling environment. These types of functions are useful for tasks such as performing mathematical calculations or evaluating conditions. Since they use arguments, the result can vary depending on the inputs provided.</p>
 <strong>Example:</strong><br>
 <pre>
+#include &lt;stdio.h&gt;<br>
 int add(int a, int b) {<br>
     return a + b;<br>
+}<br>
+<br>
+int main() {<br>
+    int sum = add(5, 3);<br>
+    printf("%d", sum);<br>
+    
+printf("\nExecuted by Puspa");<br>
+    return 0;<br>
 }
-</pre>
 
+</pre><br>
+ <img src="c2.jpg" >
 
 
  <h3>c. Function with No Return Type and No Arguments</h3>
@@ -230,31 +261,36 @@ int add(int a, int b) {<br>
   <pre>
 #include &lt;stdio.h&gt;<br>
 void greet() {<br>
-    printf("Hello! Welcome to C Programming.\n");<br>
+    printf("Hello!");<br>
 }<br>
+<br>
 int main() {<br>
     greet();<br>
+    printf("\nExecuted by Puspa");<br>
     return 0;<br>
 }
 
-  </pre>
+  </pre><br>
+ <img src="c3.jpg" >
 
   <h3>d. Function with No Return Type but With Arguments</h3>
   <p>This function accepts arguments but does not return any value. It is useful when you need to pass data into the function for processing or display, but the function does not need to send any result back. These are often used for displaying data, updating global variables, or logging events.</p>
   <strong>Example:</strong><br>
   <pre>
 #include &lt;stdio.h&gt;<br>
-void displaySum(int a, int b) {<br>
-    int sum = a + b;<br>
-    printf("Sum = %d\n", sum);<br>
+void printSum(int x, int y) {<br>
+    printf("%d", x + y);<br>
 }<br>
-
+<br>
 int main() {<br>
-    displaySum(5, 7);<br>
+    printSum(7, 8);<br>
+    printf("\nExecuted by Puspa");<br>
     return 0;<br>
 }
 
-  </pre>
+
+  </pre><br>
+ <img src="c4.jpg" >
 
   <h2>3. Storage Classes</h2>
   <p>Storage classes in C define the scope, lifetime, visibility, and default initial value of variables. They determine how memory is allocated, where the variable is stored, and how long it persists in memory during the program's execution. A storage class also specifies whether the variable is accessible within a specific block or throughout the program. Each variable in C is associated with one of the storage classes, which helps the compiler manage memory and performance optimally. Understanding storage classes is essential for writing efficient and maintainable C programs. In C, storage classes are categorized into four types:</p>
@@ -286,13 +322,24 @@ int main() {<br>
 
  <strong>Example:</strong><br>
   <pre>
+#include &lt;stdio.h&gt;<br>
 int factorial(int n) {<br>
-    if (n <= 1)<br>
+    if (n &lt;= 1)<br>
         return 1;<br>
     else<br>
         return n * factorial(n - 1);<br>
+}<br>
+<br>
+int main() {<br>
+    int num = 5;<br>
+    int result = factorial(num);<br>
+    printf("Factorial of %d is %d", num, result);<br>
+    printf("\nExecuted by Puspa");<br>
+    return 0;<br>
 }
   </pre>
+<br>
+ <img src="c5.jpg" >
 
   <h2>5. Passing Array to a Function</h2>
  <p>
@@ -301,21 +348,25 @@ int factorial(int n) {<br>
 <strong>Example:</strong><br>
  <pre>
 
+#include &lt;stdio.h&gt;<br>
 void incrementArray(int arr[], int size) {<br>
-    for (int i = 0; i < size; i++) {<br>
-        arr[i] = arr[i] + 1; <br>
-
+    for (int i = 0; i &lt; size; i++) {<br>
+        arr[i] = arr[i] + 1;<br>
     }<br>
-}<br>
-
+}<br><br>
 int main() {<br>
-      int numbers[] = {1, 2, 3};<br>
+    int numbers[] = {1, 2, 3};<br>
     incrementArray(numbers, 3);<br>
+    for (int i = 0; i &lt; 3; i++) {<br>
+        printf("%d ", numbers[i]);<br>
+    }<br>
+    printf("\nExecuted by Puspa");<br>
     return 0;<br>
 }
 
 </pre>
-
+<br>
+ <img src="c6.jpg" >
 
     </div>
     <div class="footer">&copy; All rights reserved. Grade XI Computer Science, 2025.</div>
